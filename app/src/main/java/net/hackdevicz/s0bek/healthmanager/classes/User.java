@@ -74,8 +74,6 @@ public class User {
             sex_value = 0;
         }
 
-        //this.img = (Float) (((Float) (1.20 * this.imc) + (0.23 * this.age)) - (sex_value * 10.8) - 5.4);
-        //this.img = (1.20 * this.imc) + (0.23 * this.age) - (sex_value * 10.8) - 5.4;
         double result = (1.20 * this.imc) + (0.23 * this.age) - (sex_value * 10.8) - 5.4;
         BigDecimal bigDecimal = new BigDecimal(result);
         bigDecimal = bigDecimal.setScale(3, BigDecimal.ROUND_HALF_UP);

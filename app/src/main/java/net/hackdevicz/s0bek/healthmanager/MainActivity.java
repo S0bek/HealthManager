@@ -26,13 +26,14 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     TextView imc = null;
     TextView img = null;
 
-    User user = new User();
     double user_size;
     double user_weight;
     int user_age;
     String user_IMC;
     String user_IMG;
     String sexe = null;
+
+    User user = new User();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +57,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         imc.setText("");
         img.setText("");
-
 
         //on récupère les données une fois que toutes les données ont bien été saisies
         Button result = (Button) findViewById(R.id.Result);
@@ -132,7 +132,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 Toast.makeText(this, String.format("Votre IMG: %s", img_result), Toast.LENGTH_LONG).show();
 
             }
-
 
         }
 
