@@ -23,6 +23,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     EditText age = null;
     TextView IMC = null;
     TextView IMG = null;
+    TextView imc = null;
+    TextView img = null;
 
     User user = new User();
     double user_size;
@@ -48,6 +50,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         IMC = (TextView) findViewById(R.id.imc_value);
         IMG = (TextView) findViewById(R.id.img_value);
+
+        imc = (TextView) findViewById(R.id.imc_display);
+        img = (TextView) findViewById(R.id.img_display);
+
+        imc.setText("");
+        img.setText("");
+
 
         //on récupère les données une fois que toutes les données ont bien été saisies
         Button result = (Button) findViewById(R.id.Result);
@@ -99,28 +108,32 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 user_weight = Double.parseDouble(weight_content);
                 user_age = Integer.parseInt(age_content);
 
+                user.setSize(user_size);
+                user.setAge(user_age);
+                user.setSexe(sexe);
+                user.setWeight(user_weight);
+
+                user.imc_calculate();
+                user.img_calculate();
+                double imc_result = user.getImc();
+                double img_result = user.getImg();
+
+                Log.e("AGE:", "" + user.getAge());
+                Log.e("SIZE:", "" + user.getSize());
+                Log.e("SEXE:", "" + user.getSexe());
+                Log.e("WEIGHT:", "" + user.getWeight());
+
+                /*IMC.setText(user_IMC + " " + imc_result);
+                IMG.setText(user_IMG + " " + img_result);*/
+                imc.setText(String.format("%s", imc_result));
+                img.setText(String.format("%s", img_result));
+
+                Toast.makeText(this, "Votre IMC: " + imc_result, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Votre IMG: " + img_result, Toast.LENGTH_LONG).show();
+
             }
 
-            user.setSize(user_size);
-            user.setAge(user_age);
-            user.setSexe(sexe);
-            user.setWeight(user_weight);
 
-            user.imc_calculate();
-            user.img_calculate();
-            double imc_result = user.getImc();
-            double img_result = user.getImg();
-
-            Log.e("AGE:", "" + user.getAge());
-            Log.e("SIZE:", "" + user.getSize());
-            Log.e("SEXE:", "" + user.getSexe());
-            Log.e("WEIGHT:", "" + user.getWeight());
-
-            IMC.setText(user_IMC + " " + imc_result);
-            IMG.setText(user_IMG + " " + img_result);
-            Toast.makeText(this, "Calcul effectue", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Votre IMC: " + imc_result, Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Votre IMG: " + img_result, Toast.LENGTH_SHORT).show();
         }
 
     }
