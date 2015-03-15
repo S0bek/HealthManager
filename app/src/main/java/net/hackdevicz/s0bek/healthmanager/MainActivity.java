@@ -102,7 +102,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             String age_content = age.getText().toString();
 
             //on récupère les données uniquement si elles sont remplies, sinon ca plante!
-            if (!size_content.isEmpty() && !weight_content.isEmpty() && !age_content.isEmpty() && !sexe.isEmpty()) {
+            if (!size_content.isEmpty() && !weight_content.isEmpty() && !age_content.isEmpty() && !(sexe.equals(""))) {
 
                 user_size = Double.parseDouble(size_content);
                 user_weight = Double.parseDouble(weight_content);
@@ -128,8 +128,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 imc.setText(String.format("%s", imc_result));
                 img.setText(String.format("%s", img_result));
 
-                Toast.makeText(this, "Votre IMC: " + imc_result, Toast.LENGTH_LONG).show();
-                Toast.makeText(this, "Votre IMG: " + img_result, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, String.format("Votre IMC: %s", imc_result), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, String.format("Votre IMG: %s", img_result), Toast.LENGTH_LONG).show();
 
             }
 
