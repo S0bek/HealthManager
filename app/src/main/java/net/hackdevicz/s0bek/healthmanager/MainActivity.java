@@ -31,7 +31,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     int user_age;
     String user_IMC;
     String user_IMG;
-    String sexe = null;
+    String sexe = "";
 
     User user = new User();
 
