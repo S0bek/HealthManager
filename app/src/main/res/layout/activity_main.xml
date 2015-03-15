@@ -1,0 +1,170 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Taille: "
+        android:id="@+id/size"
+        android:layout_alignBottom="@+id/size_value"
+        android:layout_alignRight="@+id/sexe"
+        android:layout_alignEnd="@+id/sexe" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Poids: "
+        android:id="@+id/weight"
+        android:layout_alignBottom="@+id/weight_value"
+        android:layout_alignLeft="@+id/size"
+        android:layout_alignStart="@+id/size" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/size_value"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/weight_value"
+        android:layout_alignEnd="@+id/weight_value"
+        android:layout_alignLeft="@+id/weight_value"
+        android:layout_alignStart="@+id/weight_value" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/weight_value"
+        android:enabled="true"
+        android:layout_below="@+id/size_value"
+        android:layout_toRightOf="@+id/weight"
+        android:layout_toEndOf="@+id/weight" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="m"
+        android:id="@+id/size_unit"
+        android:layout_above="@+id/weight_value"
+        android:layout_toRightOf="@+id/size_value"
+        android:layout_toEndOf="@+id/size_value" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="kg"
+        android:id="@+id/weight_unit"
+        android:layout_alignBottom="@+id/weight_value"
+        android:layout_alignLeft="@+id/size_unit"
+        android:layout_alignStart="@+id/size_unit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Votre IMC: "
+        android:id="@+id/imc_value"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/Result"
+        android:layout_toStartOf="@+id/Result"
+        android:layout_marginBottom="44dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Votre IMG: "
+        android:id="@+id/img_value"
+        android:layout_below="@+id/Result"
+        android:layout_toLeftOf="@+id/Result"
+        android:layout_toStartOf="@+id/Result"
+        android:layout_marginTop="50dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculer"
+        android:id="@+id/Result"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Age: "
+        android:id="@+id/age"
+        android:layout_alignBottom="@+id/age_value"
+        android:layout_toLeftOf="@+id/img_value"
+        android:layout_toStartOf="@+id/img_value" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/age_value"
+        android:layout_below="@+id/weight_value"
+        android:layout_alignLeft="@+id/weight_value"
+        android:layout_alignStart="@+id/weight_value" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="ans"
+        android:id="@+id/age_unit"
+        android:layout_alignBottom="@+id/age_value"
+        android:layout_toRightOf="@+id/age_value"
+        android:layout_toEndOf="@+id/age_value" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Sexe: "
+        android:id="@+id/sexe"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/age"
+        android:layout_alignLeft="@+id/age"
+        android:layout_alignStart="@+id/age" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignTop="@+id/sexe"
+        android:layout_above="@+id/Result"
+        android:layout_alignLeft="@+id/age_value"
+        android:layout_alignStart="@+id/age_value"
+        android:id="@+id/radiogroup"
+        android:layout_alignRight="@+id/age_unit"
+        android:layout_alignEnd="@+id/age_unit">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Homme"
+            android:id="@+id/male_radiobutton"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Femme"
+            android:id="@+id/female_radiobutton"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+</RelativeLayout>
